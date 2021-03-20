@@ -26,9 +26,9 @@ public class DemoJasper {
 	public static void main(String[] args) throws JRException, ClassNotFoundException, SQLException {
 		List<User> users = getAllUsers();
 		Date date = Calendar.getInstance().getTime();
-		DateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd_hh:mm:ss"); 
+		DateFormat dateFormat = new SimpleDateFormat("yyyy_mm_dd_hh_mm_ss"); 
 		String strDate = dateFormat.format(date);
-		String path="C:/Users/Rahul/Desktop/User_Report";
+		String path="C:/Users/Rahul/Desktop/User_Report"+strDate+".pdf";
 		String sourceFileName="C:/Users/Rahul/workspace/DemoJasper/src/jasperDemo.jrxml";
 		JasperReport jasperReport = JasperCompileManager.compileReport(sourceFileName);
 		JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(users);
